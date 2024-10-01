@@ -1,0 +1,7 @@
+SELECT * FROM sales_associates;
+
+SELECT * FROM quotes;
+
+SELECT * FROM items;
+
+SELECT * FROM secret_notes;

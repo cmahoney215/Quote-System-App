@@ -1,0 +1,60 @@
+mysql> SHOW TABLES;
++---------------------------+
+| Tables_in_quote_system_db |
++---------------------------+
+| customers                 |
+| items                     |
+| quotes                    |
+| sales_associates          |
+| secret_notes              |
++---------------------------+
+5 rows in set (0.02 sec)
+
+mysql> DESCRIBE items; 
++-------------+------------------+------+-----+---------+----------------+
+| Field       | Type             | Null | Key | Default | Extra          |
++-------------+------------------+------+-----+---------+----------------+
+| id          | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| quote_id    | int(10) unsigned | NO   | MUL | NULL    |                |
+| description | text             | NO   |     | NULL    |                |
+| price       | double           | NO   |     | NULL    |                |
++-------------+------------------+------+-----+---------+----------------+
+4 rows in set (0.02 sec)
+
+mysql> DESCRIBE quotes;
++--------------------+-------------------------------------------------+------+-----+---------+----------------+
+| Field              | Type                                            | Null | Key | Default | Extra          |
++--------------------+-------------------------------------------------+------+-----+---------+----------------+
+| id                 | int(10) unsigned                                | NO   | PRI | NULL    | auto_increment |
+| customer_id        | int(10) unsigned                                | NO   | MUL | NULL    |                |
+| sales_associate_id | int(10) unsigned                                | NO   | MUL | NULL    |                |
+| email              | varchar(255)                                    | NO   | UNI | NULL    |                |
+| total_cost         | double                                          | NO   |     | NULL    |                |
+| status             | enum('open','finalized','sanctioned','ordered') | NO   |     | NULL    |                |
+| date               | datetime                                        | NO   |     | NULL    |                |
+| commission_amount  | double                                          | YES  |     | NULL    |                |
++--------------------+-------------------------------------------------+------+-----+---------+----------------+
+8 rows in set (0.02 sec)
+
+mysql> DESCRIBE sales_associates;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| id         | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| username   | varchar(255)     | NO   | UNI | NULL    |                |
+| password   | varchar(255)     | NO   |     | NULL    |                |
+| commission | double           | NO   |     | NULL    |                |
+| city       | varchar(255)     | NO   |     | NULL    |                |
+| street     | varchar(255)     | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+6 rows in set (0.02 sec)
+
+mysql> DESCRIBE secret_notes;
++----------+------------------+------+-----+---------+----------------+
+| Field    | Type             | Null | Key | Default | Extra          |
++----------+------------------+------+-----+---------+----------------+
+| id       | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| quote_id | int(10) unsigned | NO   | MUL | NULL    |                |
+| note     | text             | NO   |     | NULL    |                |
++----------+------------------+------+-----+---------+----------------+
+3 rows in set (0.03 sec)
