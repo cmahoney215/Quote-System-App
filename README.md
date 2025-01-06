@@ -1,5 +1,7 @@
 # Quote-System-App
 
+This program provides a comprehensive solution for managing sales quotes, from creation to finalization and conversion into purchase orders. It integrates with an external processing system and allows administrators and employees to manage quotes, sales associate records, and commissions.
+
 ## Getting Started
 
 ### Prerequisites
